@@ -1,0 +1,110 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generaci�n: 13-03-2017 a las 18:07:56
+-- Versi�n del servidor: 5.0.51
+-- Versi�n de PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `matlab`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `consultas`
+-- 
+
+CREATE TABLE `consultas` (
+  `idConsulta` int(6) NOT NULL auto_increment,
+  `idProyecto` int(6) NOT NULL,
+  `lat1` varchar(6) NOT NULL,
+  `lat2` varchar(6) NOT NULL,
+  `lon1` varchar(6) NOT NULL,
+  `lon2` varchar(6) NOT NULL,
+  PRIMARY KEY  (`idConsulta`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `consultas`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `proyectos`
+-- 
+
+CREATE TABLE `proyectos` (
+  `id` int(5) NOT NULL,
+  `idUsuarios` int(5) NOT NULL,
+  `nombre` varchar(150) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `PATH` varchar(5) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `proyectos`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `regiones`
+-- 
+
+CREATE TABLE `regiones` (
+  `idRegiones` int(5) NOT NULL,
+  `idConsulta` varchar(6) NOT NULL,
+  `idUsuarios` int(5) NOT NULL,
+  `ciudad` varchar(50) NOT NULL,
+  `pais` varchar(50) NOT NULL,
+  `continente` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `regiones`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuarios`
+-- 
+
+CREATE TABLE `usuarios` (
+  `id` int(5) NOT NULL auto_increment,
+  `usuario` varchar(30) NOT NULL,
+  `pass` varchar(20) NOT NULL,
+  `correo` varchar(20) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `institucion` varchar(100) NOT NULL,
+  `pais` varchar(20) NOT NULL,
+  `ciudad` varchar(20) NOT NULL,
+  `profesion` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+-- 
+-- Volcar la base de datos para la tabla `usuarios`
+-- 
+
+INSERT INTO `usuarios` VALUES (1, 'admin', 'kshana', 'cmorenoc@ipn.mx', 'Cristian Horacio Moreno Chávez', 'xxx', 'xxx', 'xxx', '');
+INSERT INTO `usuarios` VALUES (3, 'prueba', '1', '', 'prueba', '1', 'México', 'La Paz', '');
+INSERT INTO `usuarios` VALUES (4, 'prueba', '1', '', 'prueba', '1', 'México', 'La Paz', '');
+INSERT INTO `usuarios` VALUES (5, 'prueba', '1', '', 'prueba', '1', 'México', 'La Paz', '');
+INSERT INTO `usuarios` VALUES (6, 'admin', 'kshana', '', 'Cristian Moreno', '1', '1', '1', '');
+INSERT INTO `usuarios` VALUES (7, 'admin', 'kshana', '', 'Cristian Moreno', '1', '1', '1', '');
+INSERT INTO `usuarios` VALUES (8, 'admin', 'kshana', '', 'Cristian Moreno', '1', '1', '1', '');
+INSERT INTO `usuarios` VALUES (9, 'admin', 'kshana', '', 'Cristian Moreno', '1', '1', '1', '');
+INSERT INTO `usuarios` VALUES (10, '2121', '2121', '', '1221', '12', '12', '12', '');
+INSERT INTO `usuarios` VALUES (11, 'prueba', '1', '', 'prueba', '1', 'México', 'La Paz', '');
+INSERT INTO `usuarios` VALUES (12, 'cmorenoc', 'kshana', '', 'Cristian Moreno', 'CICIMAR', 'México', 'La Paz', '');

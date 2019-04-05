@@ -1,0 +1,81 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 21-09-2016 a las 17:17:23
+-- Versión del servidor: 5.0.51
+-- Versión de PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `matlab`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `proyectos`
+-- 
+
+CREATE TABLE `proyectos` (
+  `id` int(5) NOT NULL,
+  `idUsuarios` int(5) NOT NULL,
+  `descripcion` varchar(150) NOT NULL,
+  `areaEstudio` varchar(100) NOT NULL,
+  `lat1` varchar(5) NOT NULL,
+  `lat2` varchar(5) NOT NULL,
+  `lon1` varchar(5) NOT NULL,
+  `lon2` varchar(5) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `proyectos`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `regiones`
+-- 
+
+CREATE TABLE `regiones` (
+  `id` int(5) NOT NULL,
+  `idUsuarios` int(5) NOT NULL,
+  `ciudad` varchar(50) NOT NULL,
+  `pais` varchar(50) NOT NULL,
+  `continente` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `regiones`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuarios`
+-- 
+
+CREATE TABLE `usuarios` (
+  `id` int(5) NOT NULL auto_increment,
+  `usuario` varchar(30) NOT NULL,
+  `pass` varchar(20) NOT NULL,
+  `correo` varchar(20) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `institucion` varchar(100) NOT NULL,
+  `pais` varchar(20) NOT NULL,
+  `ciudad` varchar(20) NOT NULL,
+  `profesion` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- 
+-- Volcar la base de datos para la tabla `usuarios`
+-- 
+
+INSERT INTO `usuarios` VALUES (1, 'admin', 'kshana', 'cmorenoc@ipn.mx', 'Cristian Horacio Moreno ChÃ¡vez', 'xxx', 'xxx', 'xxx', '');

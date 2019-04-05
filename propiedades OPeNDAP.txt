@@ -1,0 +1,98 @@
+>> ncdisp('http://opendap.jpl.nasa.gov/opendap/allData/ghrsst/data/L4/GLOB/JPL_OUROCEAN/G1SST/2010/160/20100609-JPL_OUROCEAN-L4UHfnd-GLOB-v01-fv01_0-G1SST.nc.bz2')
+Source:
+           http://opendap.jpl.nasa.gov/opendap/allData/ghrsst/data/L4/GLOB/JPL_OUROCEAN/G1SST/2010/160/20100609-JPL_OUROCEAN-L4UHfnd-GLOB-v01-fv01_0-G1SST.nc.bz2
+Format:
+           classic
+Global Attributes:
+           Conventions           = 'CF-1.0'
+           title                 = 'G1SST, 1km blended SST'
+           DSD_entry_id          = 'JPL_OUROCEAN-L4UHfnd-GLOB-G1SST'
+           references            = 'A Blended Global 1-km Sea Surface Temperature Data Set for Research and Applications012by Yi Chao, Benyang Tang, Zhijin Li, Peggy Li, Quoc Vu'
+           institution           = 'Jet Propulsion Laboratory, The OurOcean Team'
+           contact               = 'yi.chao@jpl.nasa.gov'
+           GDS_version_id        = 'v1.0-rev1.7'
+           netcdf_version_id     = '3.6.0'
+           creation_date         = '2010-06-14 UTC'
+           product_version       = '1.0'
+           history               = '1km SST blended from 8 satellite observations'
+           spatial_resolution    = '1 km'
+           source_data           = 'AMSRE,AVHRR,TMI,MODIS,MODIS,GOES,METOP,MTSAT,SEVIRI,AATSR,in-situ'
+           comment               = ''
+           start_date            = '2010-06-14 UTC'
+           start_time            = '00:00:00 UTC'
+           stop_date             = '2010-06-10 UTC'
+           stop_time             = '00:00:00 UTC'
+           southernmost_latitude = -80
+           northernmost_latitude = 80
+           westernmost_longitude = -180
+           easternmost_longitude = 180
+           file_quality_index    = 0
+Dimensions:
+           lat  = 16000
+           lon  = 36000
+           time = 1
+Variables:
+    time          
+           Size:       1x1
+           Dimensions: time
+           Datatype:   int32
+           Attributes:
+                       units         = 'seconds since 1981-01-01 00:00:00'
+                       long_name     = 'reference time of sst field'
+                       standard_name = 'time'
+                       axis          = 'T'
+                       calendar      = 'Gregorian'
+    lon           
+           Size:       36000x1
+           Dimensions: lon
+           Datatype:   single
+           Attributes:
+                       long_name     = 'longitude'
+                       standard_name = 'longitude'
+                       axis          = 'X'
+                       units         = 'degrees_east'
+    lat           
+           Size:       16000x1
+           Dimensions: lat
+           Datatype:   single
+           Attributes:
+                       long_name     = 'latitude'
+                       standard_name = 'latitude'
+                       axis          = 'Y'
+                       units         = 'degrees_north'
+    analysed_sst  
+           Size:       36000x16000x1
+           Dimensions: lon,lat,time
+           Datatype:   int16
+           Attributes:
+                       _FillValue    = -32768
+                       add_offset    = 273.15
+                       scale_factor  = 0.01
+                       long_name     = 'analysed sea surface temperature'
+                       standard_name = 'sea_surface_temperature'
+                       type          = 'foundation'
+                       units         = 'kelvin'
+                       valid_min     = -900
+                       valid_max     = 4500
+    mask          
+           Size:       36000x16000x1
+           Dimensions: lon,lat,time
+           Datatype:   int16
+           Attributes:
+                       long_name     = 'sea/land/lake/ice field composite mask'
+                       _FillValue    = -128
+                       flag_values   = '1b, 2b, 4b, 8b'
+                       flag_meanings = 'sea land lake ice'
+                       comment       = 'b0: 1=grid cell is open sea water012b1: 1=land is present in this grid cell012b2: 1=lake surface is present in this grid cell012b3: 1=sea ice is present in this grid cell012b4-b7: reserved for future grid mask data'
+    analysis_error
+           Size:       36000x16000x1
+           Dimensions: lon,lat,time
+           Datatype:   int16
+           Attributes:
+                       _FillValue   = -32768
+                       add_offset   = 273.15
+                       scale_factor = 0.01
+                       valid_min    = 0
+                       valid_max    = 32767
+                       long_name    = 'estimated error standard deviation of analysed_sst'
+                       units        = 'kelvin'

@@ -1,0 +1,270 @@
+#wrap{
+    width: 100%;
+    height: 100%;
+    background: whitesmoke;
+}
+
+#cabeza{
+    height: 20%;
+}
+
+    #cabeza .logo{
+        width: 10%;
+    }
+
+    #cabeza, footer{
+        background: #2b5208;
+    }
+
+#main{
+    height: 70%;
+    font-size: 2em;
+}
+
+    #cajaLogin{
+        margin: auto;
+        padding-top: 10%;
+        width: 15%;
+        border: 0px solid red;
+    }
+
+
+    .formularioRegion, .formulario input{
+        margin-top: 1em;
+        font-size: .6em;
+        border-radius: 10px;
+        border: 2px solid white;
+    }
+
+    .formulario .submit{
+        margin-left: 33%;
+    }
+
+    .formulario .submit:hover{
+        background-color: #2b5208;
+        color: white;
+    }
+
+    #cajaRegistro{
+        margin: auto;
+        padding-top: 3%;
+        width: 30%;
+        border: 0px solid red;
+    }
+
+    #cajaRegistro .formulario input{
+        font-size: .6em;
+        width: 90%;
+    }
+
+    #cajaRegistro .formulario .submit{
+        width: 40%;
+    }
+
+#menu{
+    /*border: 1px solid brown;*/
+    height: 5%;
+}
+
+.listaMenu li{
+    /*border: 1px solid red;*/
+    display: inline;
+    float: left;
+    margin: -2px 0 20px 170px;
+}
+
+.listaMenu li a{
+    text-decoration: none;
+    font-size: 0.7em;
+    color:#21bcbe;
+}
+
+.listaMenu li a:hover{
+    color:#2c510a;
+    font-size: 0.7em;
+    font-family: bold;
+    background: #eee;
+    border: 1px solid yellow;
+    cursor: url('img/cursor.png'),default;
+}
+
+.actual{
+    color:#2c510a;
+    font-size: 0.8em;
+    font-family: bold;
+    background: #eee;
+    border: 1px solid yellow;
+}
+
+#ubicacion{
+    border: 0px solid red;
+    width: 49%;
+    height: 90%;
+    float: left;
+}
+
+#despliegaImagen{
+    border: 0px solid green;
+    width: 49%;
+    height: 90%;
+    float: left;
+}
+
+#despliegaImagen .imagenRegion{
+    border: 0px solid red;
+    width: 100%;
+    height: 100%;
+}
+
+.downImg{
+    margin: 0 0 0 0;
+    float: left;
+    width: 6%;
+}
+
+.formularioRegion label{
+    font-size: 1.2em;
+    color:#21bcbe;
+}
+
+.formularioRegion td{
+    margin: 0 5em 0 0;
+}
+
+.formularioRegion input{
+    background: #fff;
+    width: 6em;
+}
+
+.formularioRegion .enviaRegion{
+    background: #8abf64;
+    border-radius: 10px;
+    border: 2px solid white;
+    width: 5em;
+}
+
+.formularioRegion .enviaRegion:hover{
+    background: #fff;
+}
+
+
+#cintaVerde{
+    /*border: 1px solid red;*/
+    background-color: #2b5208;
+    height: 3%;
+
+}
+
+
+#socialMedia{
+    height: 5%;
+    border: 0px solid red;
+}
+
+    #socialMedia .redes{
+        float: right;
+        padding-left: 1em;
+    }
+
+footer{
+    font-size: 1em;
+    height: 5%;
+    color:white;
+    text-align: center;
+}
+
+
+#usuarioLogin{
+    float: right;
+    height: 100%;
+    width: 10%;
+    border: 0px solid red;
+}
+
+#usuarioLogin .usuarioImg, #usuarioLogin .usuarioImgHidden{
+    float: left;
+    width: 50%;
+    margin: 2em 0 0 2em;
+}
+
+.usuarioImgHidden{
+    display: none;
+
+}
+
+#usuarioLogin .usuarioImg:hover{
+
+}
+
+#usuarioLogin span{
+    float: left;
+    font-size:1em;
+    color:white;
+    margin: 0 0 0 2em;
+}
+
+
+#cabeza .creaCuenta, .creaCuenta{
+    color: #20bdbe;
+    font-size: .4em;
+}
+
+#cabeza .creaCuenta{
+    font-size: 1em;
+}
+
+
+.creaCuenta{    
+    text-decoration: none;
+}
+
+#cabeza .creaCuenta:hover{
+    font-size: 1.2em;
+    color: firebrick;
+}
+
+.creaCuenta:hover{
+    font-size: .6em;
+    color: firebrick;
+}
+
+.mensajeInicio{
+    font-size: 1em;
+    margin-left: 5%;
+}
+
+
+.opcionCrear{
+    text-decoration: none;
+    font-size: 0.7em;
+    color:#21bcbe;
+}
+
+.opcionCrear:hover{
+    color:#2c510a;
+    font-size: 0.7em;
+    font-family: bold;
+    background: #eee;
+    border: 1px solid yellow;
+    cursor: url('img/cursor.png'),default;
+}
+
+
+.sub-menu{
+    display: none;    
+}
+
+#verProyectos, #crearProyecto{
+    font-size: .5em;    
+    background: #cfc;
+}
+
+#verProyectos:hover,#crearProyecto:hover{
+    font-size: .5em;    
+    background: black;
+    color:      white;
+}
+
+.obligatorio{
+    color:red;
+}
