@@ -268,3 +268,12 @@ footer{
 .obligatorio{
     color:red;
 }
+
+.muestraProyectos table{
+    margin: auto;
+}
+
+.muestraProyectos table th{
+    font-size: 1em;
+    background-color: #BFB
+}

@@ -37,11 +37,29 @@ function cargaRegiones(){
     <?
     while($datos=mysqli_fetch_row($res)){
     ?>
-        <option> <?php echo $datos[1]; ?> </option>        
+        <option value=<?php echo $datos[0];?> > <?php echo $datos[1]; ?> </option>        
     <?php
     }
     ?>
         </select>
     <?php
+}
+function cargaProyectos(){
+    $l = bd();
+    mysqli_select_db($l,"matlab");
+    //$q ="select id,nombre, descripcion from proyectos where idUsuarios='$_SESSION[id]' order by id";
+    $q ="select p.id, p.nombre, p.descripcion, r.lat1,r.lat2,r.lon1,r.lon2 from proyectos p INNER JOIN regiones r ON p.id = r.idProyectos";//where idUsuarios='$_SESSION[id]' order by id";
+    $res = mysqli_query($l,$q) or die("Error");
+    while($datos=mysqli_fetch_row($res)){
+?>
+        <tr>
+            <td>  <?php echo $datos[0];  ?> </td>
+            <td>  <?php echo $datos[1];  ?> </td>
+            <td>  <?php echo $datos[2];  ?> </td>
+            <td>  <?php echo "[".$datos[3]." ".$datos[4]."]"?> </td>
+            <td>  <?php echo "[".$datos[5]." ".$datos[6]."]"?> </td>
+        </tr>
+<?php        
+    }
 }
 ?>

@@ -1,24 +1,26 @@
+%En el formulario los datos deben tener un órden (de momento no está validado), la longitud 1 no debe ser menor que la longitud 2, si fuese el caso marca error en netcdf
+
 function openDap(lat1,lat2,lon1,lon2,fechaI, dias, dias2, usuario, proyecto)
 %https://data.nodc.noaa.gov/ghrsst/L4/GLOB/JPL_OUROCEAN/G1SST/2015/001/20150101-JPL_OUROCEAN-L4UHfnd-GLOB-v01-fv01_0-G1SST.nc.bz2
 error = 0
 MatrizBinaria = []
 % 
-  fechaI = '01/01/2015';
-  fechaF = '01/07/2015';
-  lat = [24 26]
-  lon = [-111 -109]
-% % 
-  dias = '001'
-  dias2 = 7
-  usuario = 'admin'
-% % 
-  proyecto='GC'
+%    fechaI = '01/01/2015';
+%    fechaF = '01/07/2015';
+%    lat = [24 26]
+%    lon = [-111 -109]
+% % % 
+%    dias = '001'
+%    dias2 = 7
+%    usuario = 'admin'
+% % % 
+%    proyecto='GC'
 
 % Subimagen requerida
 %--------------------------------------------------------------------------
 
- % lat = [lat1 lat2]
- % lon = [lon1 lon2]
+  lat = [lat1 lat2]
+  lon = [lon1 lon2]
 
 
   lat1 = int2str(lat(1))

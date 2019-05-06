@@ -16,6 +16,7 @@ function iniciaAjax() {
 function inicio() {
     $("#registraUsuario").click(registraUsuario);
     $("#login").click(login);
+    $("#verProyectos").click(verProyectos);
 	$("#prueba").click(prueba);
 	$("#submenu").hover(function(){
     $(".sub-menu").show();}, function(){ $(".sub-menu").hide();});
@@ -33,11 +34,17 @@ function prueba2() {
 }
 
 function crearProyecto(proyecto,descripcion){
+    alert('sss')
     a = iniciaAjax();
     a.onreadystatechange = muestraContenido;
     a.open('POST', 'creaProyecto.php', true);
     a.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     a.send("proyecto="+proyecto+"&descripcion="+descripcion);
+}
+
+function verProyectos(){
+    window.location.href='verProyectos.php'
+
 }
 
 function cadena() {
