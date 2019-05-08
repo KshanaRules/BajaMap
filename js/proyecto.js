@@ -8,7 +8,7 @@ $(function() {
   // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
    emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
    name = $( "#name" ),
-   email = $( "#email" ),
+   emaidescripcionl = $( "#email" ),
    password = $( "#password" ),
    allFields = $( [] ).add( name ).add( email ).add( password ),
    tips = $( ".validateTips" );
@@ -77,8 +77,7 @@ $(function() {
     width: 350,
     modal: true,
     buttons: {
-      "Crear proyecto": function(){crearProyecto($("#name").val(),$("#email").val());} ,
-      //"Crear proyecto": function(){login();},
+      "Crear proyecto": function(){crearProyecto($("#name").val(),$("#email").val());} ,      
       "Cancelar": function() {
       dialog.dialog( "close" );
       }
