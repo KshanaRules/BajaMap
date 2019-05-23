@@ -8,7 +8,8 @@
     $inputDir  = "C:\\AppServ\\www\\bajaMap";
     //$outputDir = "C:\\AppServ\\www\\bajaMap\\admin";
 
-    echo $region = $_REQUEST[seleccionaRegion];    
+    echo $region = regresaRegion($_REQUEST[seleccionaRegion]);    
+
     echo "<br/>";
     echo $_REQUEST[fechaI];
     echo $_REQUEST[fechaF];

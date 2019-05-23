@@ -5,22 +5,22 @@ function openDap(lat1,lat2,lon1,lon2,fechaI, dias, dias2, usuario, proyecto)
 error = 0
 MatrizBinaria = []
 % 
-%    fechaI = '01/01/2015';
-%    fechaF = '01/07/2015';
-%    lat = [24 26]
-%    lon = [-111 -109]
+    fechaI = '01/01/2015';
+    fechaF = '01/03/2015';
+    lat = [24 26]
+    lon = [-111 -109]
 % % % 
-%    dias = '001'
-%    dias2 = 7
-%    usuario = 'admin'
+    dias = '001'
+    dias2 = 3
+    usuario = 'admin'
 % % % 
-%    proyecto='GC'
+    proyecto='xxx'
 
 % Subimagen requerida
 %--------------------------------------------------------------------------
 
-  lat = [lat1 lat2]
-  lon = [lon1 lon2]
+  %lat = [lat1 lat2]
+  %lon = [lon1 lon2]
 
 
   lat1 = int2str(lat(1))
@@ -102,37 +102,39 @@ if(error==777)
     %archivo  = strcat('proyectos/',usuario,'/',proyecto,'/IMG[',lat1,'][',lat2,'][',lon1,'][',lon2,']_',a,m,d,'_',usuario)
     %archivo2 = ['IMG[' lat1 '][' lat2 '][' lon1 '][' lon2 ']_' a m d '_' usuario];
     
-    
-    
-    %Imprime en escala X y Y las coordenadas de SST
     llat  = lat(1)+.01
     vlat=llat:0.01:lat(2);
+    
     llon = lon(1)+.01
     vlon = llon:0.01:lon(2)
+    
+    %vlat=24.01:0.01:25;
+    %vlon=-110.99:0.01:-110;
     [LON,LAT] = meshgrid(vlon,vlat);
-
     
     archivo  = strcat('proyectos/',usuario,'/',proyecto,'/IMG[',lat1,'][',lat2,'][',lon1,'][',lon2,']_',a,m,d,'_',usuario)
     figure;pcolor(LON,LAT,sst),shading flat,colorbar
     
+
+
+
+
     	
     print(archivo,'-dtiff')
     save(archivo,'sst');
 
     mapaGris  = imread(archivo,'tif');
     mapaGris2 = rgb2gray(mapaGris);
- 
-
+% 
     I = edge(sst,'canny');
     archivoCanny  = strcat('proyectos/',usuario,'/',proyecto,'/Canny_IMG[',lat1,'][',lat2,'][',lon1,'][',lon2,']_',a,m,d,'_',usuario)
+   
     figure; pcolor(I), shading flat
     print(archivoCanny,'-dtiff')
     save(archivoCanny,'sst');
 
-    
-
     if (x==1)
-        MatrizBinaria = I
+        MatrizBinaria = I;
     end
 
  
@@ -155,6 +157,6 @@ else
     disp('Error de conexión')
 end
 
-MatrizBinaria = MatrizBinaria + I
+MatrizBinaria = MatrizBinaria + I;
 figure; pcolor(MatrizBinaria), shading flat
 end

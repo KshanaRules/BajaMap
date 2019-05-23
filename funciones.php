@@ -44,6 +44,17 @@ function cargaRegiones(){
         </select>
     <?php
 }
+
+function regresaRegion($id){
+    $l = bd();
+    mysqli_select_db($l, "matlab");
+    $q = "select nombre from proyectos where id='$id'";
+    $res = mysqli_query($l,$q) or die("Error");
+    $datos = mysqli_fetch_row($res);
+    return $datos[0];
+}
+
+
 function cargaProyectos(){
     $l = bd();
     mysqli_select_db($l,"matlab");
