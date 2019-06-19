@@ -63,7 +63,7 @@
   </section>
   <section id="cintaVerde"></section>
     <div id="ubicacion">
-      <form  action="matlab.php" method="post" class="formularioRegion">
+      <form  action="Procesar.php" method="post" class="formularioRegion">
         <table>
           <tr>
           <td colspan="2">
@@ -73,9 +73,9 @@
           <td colspan="2">
             Algoritmo
             <select name="algoritmo">
-              <option value="can"> Canny  </option>
-              <option value="cay"> Cayula </option>
-              <option value="cdr"> CDR    </option>
+              <option value="Canny"> Canny  </option>
+              <option value="Cayula"> Cayula </option>
+              <option value="CDR"> CDR    </option>
             </select> 
           </tr>
           <tr><td colspan="3"><input type="submit" class="enviaRegion" value="generar"/></td></tr>

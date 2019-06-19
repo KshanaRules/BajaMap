@@ -54,6 +54,29 @@ function regresaRegion($id){
     return $datos[0];
 }
 
+function regresaIdUsuario($usuario){
+    $l = bd();
+    mysqli_select_db($l, "matlab");
+    $q = "select id from usuarios where usuario='$usuario'";
+    $res = mysqli_query($l,$q) or die("Error");
+    $datos = mysqli_fetch_row($res);
+    return $datos[0];
+
+}
+
+function datosRegiones($proyecto, $idUsuario){
+    $l = bd();
+    echo "---";
+    mysqli_select_db($l, "matlab");
+    $q = "select * from regiones where idProyectos=$proyecto and idUsuarios=$idUsuario";
+    $res = mysqli_query($l, $q) or die("Error");
+    $datos = mysqli_fetch_row($res);    
+    return $datos;
+
+
+
+
+}
 
 function cargaProyectos(){
     $l = bd();

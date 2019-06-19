@@ -2,13 +2,22 @@
     @session_start();
     include("funciones.php");
 
-    echo $usuario = $_SESSION[usuario];
-    echo "<br/>";
-
+    $_REQUEST['algoritmo'];
+    $usuario = $_SESSION[usuario];
     $inputDir  = "C:\\AppServ\\www\\bajaMap";
-    //$outputDir = "C:\\AppServ\\www\\bajaMap\\admin";
+ 
+    $idUsuario = regresaIdUsuario($_SESSION[usuario]);
+    $region = regresaRegion($_REQUEST[seleccionaRegion]);    
+    $datos = datosRegiones($_REQUEST[seleccionaRegion],$idUsuario);
+    echo $datos."-";
 
-    echo $region = regresaRegion($_REQUEST[seleccionaRegion]);    
+    echo $lat1 = $datos[3];
+    echo $lat2 = $datos[4];
+    echo $lon1 = $datos[3];
+    echo $lat2 = $datos[4];
+
+
+/*  
 
     echo "<br/>";
     echo $_REQUEST[fechaI];
@@ -70,7 +79,7 @@
 //20 32   -117 -105
 /*    $command = "matlab -sd ".$inputDir." -r openDap($_REQUEST[La1],$_REQUEST[La2],$_REQUEST[L1],$_REQUEST[L2],'$_REQUEST[fechaI]','$dias',$dias2,'$usuario','$region')";
 */    
-    $command = "matlab -sd ".$inputDir." -r crearProyecto($_REQUEST[La1],$_REQUEST[La2],$_REQUEST[L1],$_REQUEST[L2],'$_REQUEST[fechaI]','$dias',$dias2,'$usuario','$region')";
+    /*$command = "matlab -sd ".$inputDir." -r crearProyecto($_REQUEST[La1],$_REQUEST[La2],$_REQUEST[L1],$_REQUEST[L2],'$_REQUEST[fechaI]','$dias',$dias2,'$usuario','$region')";
     
     exec($command);
 
@@ -82,5 +91,5 @@
   //  echo  $command = "matlab -sd ".$inputDir." -r openDap";
     //exec($command);
     echo "The following command was run: ".$command."<br/>";
-    echo $filename." was created in ".$outputDir."<br/>";
+    echo $filename." was created in ".$outputDir."<br/>";*/
 ?>
