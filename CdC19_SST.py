@@ -111,13 +111,23 @@ coordLon  = [-180,-170,-160,-150,-140, -130, -120, -110, -100, -90, -80, -70, -6
 ##Existe un problema en la numeracíon del día a solicitar, ya que da un valor de uno menos, eso debido a que la operaciòn que se realiza es una resta de la fecha solicitada  al primer
 #día del año
 
+res = input("¿Datos por default?")
+if res=="1":
+    fecha1 = "18-08-2018"
+    lat1=23
+    lat2=26
+    lon1=-111
+    lon2=-108    
+
+    
 
 while otra!=True:
     while ban!=True:    
         #Solicita al usuario la región a localizar, se debe validar que no sean regiones mayore a 10ºx10º
         
-        print("Formato de captura (DD-MM-YYYY)")
-        fecha1 = input("Capture fecha deseada:  ")
+        if res!="1":
+            print("Formato de captura (DD-MM-YYYY)")
+            fecha1 = input("Capture fecha deseada:  ")
         
         fecha1 = fecha1.split("-")    
         
@@ -130,11 +140,11 @@ while otra!=True:
         diff = abs(date(anioS, mesS, diaS) - date(anio, mes, dia))
         print(diff.days)
         
-        
-        lat1 = input("Capture Latitud(1): ")
-        lat2 = input("Capture Latitud(2): ")
-        lon1 = input("Capture Longitud(1): ")
-        lon2 = input("Capture Longitud(2): ")
+        if res!="1":        
+            lat1 = input("Capture Latitud(1): ")
+            lat2 = input("Capture Latitud(2): ")
+            lon1 = input("Capture Longitud(1): ")
+            lon2 = input("Capture Longitud(2): ")
         
         if( (int(lat1)-int(lat2)) > 10) or (int(lat1)-int(lat2) > 10):
             print(ban) 
@@ -198,9 +208,11 @@ while otra!=True:
     
     sst_c = ds.analysed_sst[0][latMM1:latMM2,lonMM1:lonMM2] - 273.15
     sst_c.plot()
+    plt.savefig(str(diaS)+str(mesS)+str(anioS)+"Lat["+str(lat1)+str(lat2)+"]"+"Lon["+str(lon1)+str(lon2)+"].png")
     
     otra = input("Desea realizar otra consulta (s/n): ")
     if (otra=="s"):
+        res = ""
         pass
     if (otra=='n'):
         otra = True
@@ -223,3 +235,5 @@ plt.plot(sst_c)
 plt.subplot(212)
 plt.plot(t2, np.cos(2*np.pi*t2), 'r--')
 plt.show()"""
+
+
