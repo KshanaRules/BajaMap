@@ -73,7 +73,7 @@
 
 
     if ($_REQUEST['algoritmo']=="Canny"){
-        $command = "matlab -sd ".$inputDir." -r crearProyecto($lat1,$lat2,$lon1,$lon2,'$_REQUEST[fechaI]','$dias',$dias2,'$usuario','$region')";  
+        $command = "matlab -sd ".$inputDir." -r cany($lat1,$lat2,$lon1,$lon2,'$fechaI','$dias',$dias2,'$usuario','$region')";  
         exec($command);
         echo $inputDir  = "C:\\output";
         echo $outputDir = "C:\\output";
