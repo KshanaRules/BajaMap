@@ -63,7 +63,7 @@
   </section>
   <section id="cintaVerde"></section>
     <div id="ubicacion">
-      <form  action="Procesar.php" method="post" class="formularioRegion">
+      <form  action="procesar.php" method="post" class="formularioRegion">
         <table>
           <tr>
           <td colspan="2">

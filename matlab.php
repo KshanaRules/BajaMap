@@ -46,8 +46,8 @@
     $l = bd();
     mysqli_select_db($l,"matlab");
 
-    echo $q ="insert into regiones(idUsuarios,idProyectos,lat1,lat2,lon1,lon2,fechaI,fechaF) values($_SESSION[id],$_REQUEST[seleccionaRegion],'$_REQUEST[La1]','$_REQUEST[La2]','$_REQUEST[L1]','$_REQUEST[L2]','$fechaI','$fechaF')";
-    echo mysqli_query($l,$q) or die("Erroxxr");
+   // echo $q ="insert into regiones(idUsuarios,idProyectos,lat1,lat2,lon1,lon2,fechaI,fechaF) values($_SESSION[id],$_REQUEST[seleccionaRegion],'$_REQUEST[La1]','$_REQUEST[La2]','$_REQUEST[L1]','$_REQUEST[L2]','$fechaI','$fechaF')";
+   // echo mysqli_query($l,$q) or die("Erroxxr");
     
 
     
@@ -70,9 +70,9 @@
 //20 32   -117 -105
 /*    $command = "matlab -sd ".$inputDir." -r openDap($_REQUEST[La1],$_REQUEST[La2],$_REQUEST[L1],$_REQUEST[L2],'$_REQUEST[fechaI]','$dias',$dias2,'$usuario','$region')";
 */    
-    $command = "matlab -sd ".$inputDir." -r crearProyecto($_REQUEST[La1],$_REQUEST[La2],$_REQUEST[L1],$_REQUEST[L2],'$_REQUEST[fechaI]','$dias',$dias2,'$usuario','$region')";
+   // $command = "matlab -sd ".$inputDir." -r crearProyecto($_REQUEST[La1],$_REQUEST[La2],$_REQUEST[L1],$_REQUEST[L2],'$_REQUEST[fechaI]','$dias',$dias2,'$usuario','$region')";
     
-    exec($command);
+ //   exec($command);
 
 
     echo $inputDir  = "C:\\output";
