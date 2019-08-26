@@ -72,14 +72,18 @@
         echo $dias = "0".$dias;    
 
 
-    if ($_REQUEST['algoritmo']=="Canny"){
-        $command = "matlab -sd ".$inputDir." -r cany($lat1,$lat2,$lon1,$lon2,'$fechaI','$dias',$dias2,'$usuario','$region')";  
-        exec($command);
-        echo $inputDir  = "C:\\output";
-        echo $outputDir = "C:\\output";
-        echo "The following command was run: ".$command."<br/>";
-        echo $filename." was created in ".$outputDir."<br/>";        
-    }
+    if ($_REQUEST['algoritmo']=="Canny")
+        $command = "matlab -sd ".$inputDir." -r algoritmo('canny','admin','prueba')";  
+    elseif ($_REQUEST['algoritmo']=="Cayula")
+        $command = "matlab -sd ".$inputDir." -r algoritmo('cayula','admin','prueba')";  
+
+
+    exec($command);
+    echo $inputDir  = "C:\\output";
+    echo $outputDir = "C:\\output";
+    echo "The following command was run: ".$command."<br/>";
+    echo $filename." was created in ".$outputDir."<br/>";        
+
 /*  
 
     echo "<br/>";
